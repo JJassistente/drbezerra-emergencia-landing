@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartilha de Uso — Site do Dr. Bezerra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:oklch(0.97 0.012 85);
+    --surface:oklch(0.995 0.004 90);
+    --surface-2:oklch(0.945 0.014 85);
+    --border:oklch(0.88 0.017 85);
+    --text:oklch(0.25 0.03 260);
+    --text-muted:oklch(0.46 0.02 260);
+    --accent:oklch(0.56 0.13 78);
+    --accent-ink:oklch(0.99 0.005 90);
+    --navy:oklch(0.21 0.05 259);
+    --navy-ink:oklch(0.96 0.01 90);
+    --code-bg:oklch(0.92 0.02 85);
+    --warn-bg:oklch(0.95 0.045 55);
+    --warn-border:oklch(0.75 0.11 55);
+    --warn-text:oklch(0.35 0.09 45);
+    --ok-bg:oklch(0.95 0.045 145);
+    --ok-border:oklch(0.72 0.1 145);
+    --ok-text:oklch(0.32 0.08 145);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:oklch(0.19 0.028 260);
+      --surface:oklch(0.24 0.032 260);
+      --surface-2:oklch(0.28 0.034 260);
+      --border:oklch(0.34 0.036 260);
+      --text:oklch(0.94 0.012 90);
+      --text-muted:oklch(0.72 0.018 260);
+      --accent:oklch(0.78 0.12 85);
+      --accent-ink:oklch(0.18 0.03 260);
+      --navy:oklch(0.15 0.04 259);
+      --navy-ink:oklch(0.96 0.01 90);
+      --code-bg:oklch(0.29 0.034 260);
+      --warn-bg:oklch(0.28 0.05 55);
+      --warn-border:oklch(0.5 0.1 55);
+      --warn-text:oklch(0.88 0.05 60);
+      --ok-bg:oklch(0.26 0.045 145);
+      --ok-border:oklch(0.48 0.09 145);
+      --ok-text:oklch(0.85 0.06 145);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:oklch(0.19 0.028 260);
+    --surface:oklch(0.24 0.032 260);
+    --surface-2:oklch(0.28 0.034 260);
+    --border:oklch(0.34 0.036 260);
+    --text:oklch(0.94 0.012 90);
+    --text-muted:oklch(0.72 0.018 260);
+    --accent:oklch(0.78 0.12 85);
+    --accent-ink:oklch(0.18 0.03 260);
+    --navy:oklch(0.15 0.04 259);
+    --navy-ink:oklch(0.96 0.01 90);
+    --code-bg:oklch(0.29 0.034 260);
+    --warn-bg:oklch(0.28 0.05 55);
+    --warn-border:oklch(0.5 0.1 55);
+    --warn-text:oklch(0.88 0.05 60);
+    --ok-bg:oklch(0.26 0.045 145);
+    --ok-border:oklch(0.48 0.09 145);
+    --ok-text:oklch(0.85 0.06 145);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Public Sans',Helvetica,Arial,sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;text-wrap:balance;margin:0}
+  code, .kbd{
+    font-family:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+    background:var(--code-bg);
+    border-radius:4px;
+    padding:2px 6px;
+    font-size:0.88em;
+    color:var(--text);
+  }
+  a{color:var(--accent)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px 100px}
+
+  header.masthead{background:var(--navy);color:var(--navy-ink);padding:56px 0 44px}
+  header.masthead .eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:var(--accent);text-transform:uppercase}
+  header.masthead h1{font-size:clamp(30px,4vw,42px);font-weight:600;line-height:1.2;margin:14px 0 14px;color:var(--navy-ink)}
+  header.masthead p{font-size:15.5px;color:oklch(0.8 0.02 260 / 0.9);max-width:60ch;margin:0}
+  :root[data-theme="dark"] header.masthead p, @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) header.masthead p { color: oklch(0.82 0.02 260) } }
+
+  nav.toc{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px 24px;
+    margin:-28px 0 48px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px 24px;
+  }
+  nav.toc .toc-title{grid-column:1/-1;font-size:11.5px;letter-spacing:1.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;margin-bottom:4px}
+  nav.toc a{text-decoration:none;color:var(--text);font-size:14px;font-weight:500;display:flex;gap:8px}
+  nav.toc a span{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+  nav.toc a:hover{color:var(--accent)}
+
+  section{padding:44px 0;border-top:1px solid var(--border)}
+  section:first-of-type{border-top:none}
+  section .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:999px;background:var(--navy);color:var(--accent);
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;margin-right:12px;flex-shrink:0;
+  }
+  section h2{font-size:24px;font-weight:600;display:flex;align-items:center;margin-bottom:18px}
+  section h3{font-size:17px;font-weight:600;margin:28px 0 10px;color:var(--text)}
+  p{margin:0 0 14px;color:var(--text)}
+  p.muted, li.muted{color:var(--text-muted)}
+  ul,ol{padding-left:22px;margin:0 0 14px}
+  li{margin-bottom:6px}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin:16px 0}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px}
+  th{text-align:left;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);padding:0 12px 10px;border-bottom:2px solid var(--border);font-weight:700}
+  td{padding:12px;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .table-wrap{overflow-x:auto}
+  td.mono{font-family:'IBM Plex Mono',monospace;font-size:12.5px;white-space:nowrap}
+
+  .callout{border-radius:10px;padding:16px 20px;margin:18px 0;border:1px solid;font-size:14px}
+  .callout.warn{background:var(--warn-bg);border-color:var(--warn-border);color:var(--warn-text)}
+  .callout.ok{background:var(--ok-bg);border-color:var(--ok-border);color:var(--ok-text)}
+  .callout strong{display:block;margin-bottom:4px;font-size:13px;letter-spacing:0.3px;text-transform:uppercase}
+
+  .steps{counter-reset:step}
+  .step{position:relative;padding-left:44px;margin-bottom:20px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;
+    width:28px;height:28px;border-radius:999px;
+    background:var(--surface-2);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--accent);
+  }
+
+  footer{padding:40px 0 0;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border);margin-top:20px}
+
+  @media (max-width:640px){
+    nav.toc{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <span class="eyebrow">Cartilha de uso</span>
+    <h1>Como editar o site do Dr. Bezerra</h1>
+    <p>Guia rápido para trocar fotos, editar textos e entender a estrutura da landing page de atendimento domiciliar — sem precisar saber programar.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <span class="toc-title">Nesta cartilha</span>
+    <a href="#estrutura"><span>01</span> Do que o site é feito</a>
+    <a href="#fotos"><span>02</span> Como trocar as fotos</a>
+    <a href="#textos"><span>03</span> Como editar os textos</a>
+    <a href="#pendencias"><span>04</span> O que ainda está com texto de exemplo</a>
+    <a href="#publicar"><span>05</span> Como publicar uma alteração</a>
+    <a href="#cuidados"><span>06</span> Cuidados ao editar</a>
+  </nav>
+
+  <section id="estrutura">
+    <h2><span class="num">01</span>Do que o site é feito</h2>
+    <p>O site é uma <strong>página única</strong> (não tem "painel de administração" nem banco de dados). Tudo o que aparece nela mora em dois lugares dentro da pasta do projeto:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Arquivo / pasta</th><th>O que é</th></tr>
+        <tr><td class="mono">index.html</td><td>Todo o texto, os links (WhatsApp, Google Agenda, Instagram) e o layout da página.</td></tr>
+        <tr><td class="mono">img/</td><td>As 4 imagens usadas no site: foto de topo, foto de portfólio, foto da seção "Sobre Mim" e o QR Code do Pix.</td></tr>
+      </table>
+    </div>
+    <p class="muted">Não existe login nem senha para editar o site — qualquer alteração é feita diretamente nesses arquivos, e depois publicada (seção 5).</p>
+  </section>
+
+  <section id="fotos">
+    <h2><span class="num">02</span>Como trocar as fotos</h2>
+    <p>Trocar uma foto <strong>não exige mexer no código</strong>: basta substituir o arquivo dentro da pasta <code>img/</code> por um novo arquivo <strong>com exatamente o mesmo nome</strong>.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Arquivo</th><th>Onde aparece</th><th>Formato ideal da foto</th></tr>
+        <tr><td class="mono">img/hero.png</td><td>Foto grande no topo da página, ao lado do título "Dr. Bezerra"</td><td>Vertical (proporção 4:5) — foto de corpo inteiro ou 3/4, bem iluminada</td></tr>
+        <tr><td class="mono">img/atendimento.png</td><td>Foto grande na seção "Atendimento e Estrutura" (galeria de fotos)</td><td>Quadrada (1:1) — foto do consultório, maleta ou de um atendimento</td></tr>
+        <tr><td class="mono">img/perfil.png</td><td>Foto ao lado do texto "Sobre Mim"</td><td>Vertical (proporção 4:5) — foto de perfil mais próxima/pessoal</td></tr>
+        <tr><td class="mono">img/pix-qr.png</td><td>QR Code na seção "Pague sua consulta via Pix"</td><td>Não é uma foto sua — é gerado a partir da chave Pix. Só precisa trocar se a chave Pix mudar (peça para gerar um novo QR Code nesse caso).</td></tr>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <strong>Situação atual</strong>
+      As três fotos (hero, atendimento e perfil) hoje são <em>a mesma foto</em> repetida. Recomendado trocar por três fotos diferentes assim que possível — pelo menos a de "Atendimento e Estrutura", que hoje não mostra o consultório de fato.
+    </div>
+
+    <h3>Passo a passo</h3>
+    <div class="steps">
+      <div class="step">Escolha a foto nova e renomeie o arquivo para o nome exato da tabela acima (ex: <code>hero.png</code>). Tem que terminar em <code>.png</code>.</div>
+      <div class="step">Coloque o arquivo dentro da pasta <code>img/</code>, substituindo o antigo.</div>
+      <div class="step">Publique a alteração (veja a seção 5) para a foto nova aparecer no site.</div>
+    </div>
+    <p class="muted">Se a foto nova for <code>.jpg</code> ao invés de <code>.png</code>, tudo bem — só avise na hora de publicar para ajustar o nome do arquivo referenciado no <code>index.html</code> também.</p>
+  </section>
+
+  <section id="textos">
+    <h2><span class="num">03</span>Como editar os textos</h2>
+    <p>Os textos ficam escritos diretamente no arquivo <code>index.html</code>. Para editar, abra o arquivo num editor de texto simples (Bloco de Notas serve, mas o <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> é mais confortável), aperte <span class="kbd">Ctrl+F</span> e procure exatamente pelo texto atual — troque só o que está entre as aspas de conteúdo, sem mexer no resto da linha.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Onde</th><th>Texto atual (procure por isso)</th></tr>
+        <tr><td>Frase de efeito, abaixo do título</td><td>"Cuidado clínico humanizado, no conforto e na segurança do seu lar."</td></tr>
+        <tr><td>Linha de identificação, acima do título</td><td>CRM: 6094-PB — ATENDIMENTO A IDOSOS E ADULTOS</td></tr>
+        <tr><td>Parágrafo "Sobre Mim" (trajetória)</td><td>Formado pela Universidade Federal de Campina Grande (UFCG)...</td></tr>
+        <tr><td>Citação em destaque na seção Sobre Mim</td><td>"Acredito em uma medicina próxima, que escuta e acompanha..."</td></tr>
+        <tr><td>4 diferenciais (Domiciliar, Humanizado, Idosos & Adultos, Confiança)</td><td>Cada card tem um título curto em itálico e uma frase logo abaixo</td></tr>
+        <tr><td>6 cards de "Áreas de Atuação"</td><td>Consulta Domiciliar, Cuidado ao Idoso, Clínica para Adultos, etc.</td></tr>
+        <tr><td>Endereço</td><td>Rua Raimundo Nonato Araújo, Sala 1010 — Bairro Catolé</td></tr>
+        <tr><td>Telefone / WhatsApp</td><td>(83) 98807-2726 — aparece em vários lugares (botões de WhatsApp, telefone, rodapé)</td></tr>
+        <tr><td>Instagram</td><td>@dr_bezerra</td></tr>
+        <tr><td>E-mail</td><td>medic.assistent@gmail.com</td></tr>
+        <tr><td>Chave Pix</td><td>022.313.334-57</td></tr>
+        <tr><td>Rodapé (direitos autorais)</td><td>© 2026 Dr. Bezerra — Clínico Geral. CRM: 6094-PB.</td></tr>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <strong>Atenção com o telefone e a chave Pix</strong>
+      O número <code>5583988072726</code> aparece repetido em vários links de WhatsApp ao longo do arquivo (botão do topo, do rodapé, da seção de contato e o botão flutuante). Se o número mudar, é preciso trocar em <strong>todas</strong> as ocorrências — use "Substituir tudo" (Ctrl+H) no editor de texto para não esquecer nenhuma.
+    </div>
+  </section>
+
+  <section id="pendencias">
+    <h2><span class="num">04</span>O que ainda está com texto de exemplo</h2>
+    <p>Alguns trechos do site foram deixados como espaço reservado e precisam de conteúdo real antes de divulgar o link amplamente:</p>
+    <ul>
+      <li><strong>Depoimentos</strong> — os 3 cards de depoimentos de pacientes têm texto genérico ("Espaço reservado para o comentário...") e nome fictício ("Nome do paciente"). Trocar por depoimentos reais (com autorização do paciente) antes de publicar.</li>
+      <li><strong>Pesquisa de Satisfação</strong> — o botão "Responder Pesquisa" aponta para <code>#</code> (não vai a lugar nenhum). Precisa de um link de formulário real (ex: Google Forms).</li>
+      <li><strong>Facebook e YouTube</strong> — os ícones na seção "Redes Sociais" também apontam para <code>#</code>. Preencher com os links reais, ou remover os ícones caso não existam esses perfis.</li>
+      <li><strong>Galeria de fotos</strong> — na seção "Atendimento e Estrutura", 4 dos 5 espaços da galeria ainda são apenas placeholders cinza com texto ("FOTO 2", "FOTO 3"...). Adicionar fotos reais nesses espaços exige uma pequena edição de código — peça para o desenvolvedor/Claude fazer isso quando tiver as fotos prontas.</li>
+    </ul>
+  </section>
+
+  <section id="publicar">
+    <h2><span class="num">05</span>Como publicar uma alteração</h2>
+    <p>Editar o arquivo no computador não muda o site que está no ar — é preciso "publicar" a alteração. Esse processo tem uma parte técnica (Git e Docker), então o caminho mais simples é:</p>
+    <div class="callout ok">
+      <strong>Caminho recomendado</strong>
+      Descreva a alteração desejada (o texto novo, ou a foto anexada) para quem cuida do site — ou peça diretamente ao Claude Code para aplicar. A alteração é commitada, enviada ao GitHub e reimplantada no servidor.
+    </div>
+    <h3>Caminho técnico (para quem for aplicar direto no servidor)</h3>
+    <div class="steps">
+      <div class="step">Editar <code>index.html</code> e/ou os arquivos em <code>img/</code>, salvar.</div>
+      <div class="step">Enviar a alteração ao repositório: <code>git add . && git commit -m "..." && git push</code>.</div>
+      <div class="step">No servidor (VPS), atualizar e reconstruir o container: <code>git pull && docker compose -f docker-compose.yml -f docker-compose.prod-traefik.yml up -d --build</code>.</div>
+      <div class="step">Conferir em <code>https://drbezerraemergencia.jjassistentebot.tech</code> se a alteração aplicou.</div>
+    </div>
+  </section>
+
+  <section id="cuidados">
+    <h2><span class="num">06</span>Cuidados ao editar</h2>
+    <ul>
+      <li>Dentro do arquivo, cada trecho de aparência (cor, espaçamento, tamanho de fonte) fica dentro de <code>style="..."</code>. Evite mexer no que está dentro dessas aspas se não tiver familiaridade com CSS — um caractere fora do lugar pode quebrar o layout da página inteira.</li>
+      <li>Sempre troque o texto <strong>entre</strong> as tags (ex: entre <code>&gt;</code> e <code>&lt;</code>), nunca apague as tags em si (como <code>&lt;p&gt;</code>, <code>&lt;a href="..."&gt;</code>).</li>
+      <li>Depois de editar, abra o arquivo num navegador (duplo clique no <code>index.html</code>) para conferir visualmente antes de publicar.</li>
+      <li>Se algo quebrar, o histórico do Git guarda todas as versões anteriores — nada se perde permanentemente.</li>
+    </ul>
+  </section>
+
+  <footer>
+    Cartilha do projeto <strong>drbezerra-emergencia-landing</strong> · atualizada conforme o site evolui.
+  </footer>
+
+</div>
+</body>
+</html>
