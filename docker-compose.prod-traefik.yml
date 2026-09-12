@@ -1,0 +1,18 @@
+# Uso (VPS que já tem um Traefik compartilhado rodando outros serviços — dono das portas 80/443
+# do host, com "providers.docker=true" e um certresolver Let's Encrypt já configurado nele):
+#
+#   docker compose -f docker-compose.yml -f docker-compose.prod-traefik.yml up -d --build
+#
+# Requer no .env: DOMAIN=drbezerraemergencia.jjassistentebot.tech
+#
+# O nome do router Traefik ("drbezerraemergencia-web") é único para não colidir com outros
+# projetos que já rodam no mesmo Traefik compartilhado desta VPS.
+services:
+  web:
+    ports: !reset []
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.drbezerraemergencia-web.entrypoints=websecure"
+      - "traefik.http.routers.drbezerraemergencia-web.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.drbezerraemergencia-web.tls.certresolver=letsencrypt"
+      - "traefik.http.services.drbezerraemergencia-web.loadbalancer.server.port=80"
