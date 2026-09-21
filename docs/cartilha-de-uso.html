@@ -248,6 +248,14 @@
       <strong>Atenção com o telefone e a chave Pix</strong>
       O número <code>5583988072726</code> aparece repetido em vários links de WhatsApp ao longo do arquivo (botão do topo, do rodapé, da seção de contato e o botão flutuante). Se o número mudar, é preciso trocar em <strong>todas</strong> as ocorrências — use "Substituir tudo" (Ctrl+H) no editor de texto para não esquecer nenhuma.
     </div>
+
+    <h3>Foto e resumo que aparecem ao encaminhar o link</h3>
+    <p>Quando alguém cola o link do site no WhatsApp (ou Instagram, Facebook etc.), o app monta um "cartão de prévia" automaticamente — com foto, título e resumo. Isso é controlado pelas tags <code>og:title</code>, <code>og:description</code> e <code>og:image</code>, no topo do <code>&lt;head&gt;</code> do <code>index.html</code>. Hoje usam a foto <code>img/hero.png</code>.</p>
+    <div class="callout warn">
+      <strong>Essas tags usam o endereço completo do site</strong>
+      Ao contrário do resto da página (que usa caminhos relativos como <code>img/hero.png</code>), as tags <code>og:image</code> e <code>og:url</code> precisam do endereço completo (<code>https://drbezerraemergencia.jjassistentebot.tech/...</code>). Se o domínio do site mudar um dia, essas tags têm que ser atualizadas junto — senão o link volta a não mostrar foto ao ser encaminhado.
+    </div>
+    <p class="muted">Depois de qualquer alteração aqui, o WhatsApp costuma mostrar a prévia antiga por um tempo (ele guarda em cache) — normal, não é preciso fazer nada além de esperar.</p>
   </section>
 
   <section id="pendencias">
