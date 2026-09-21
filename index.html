@@ -1,3 +1,11 @@
+<!--
+  ATENÇÃO (2026-09-21): a pedido do Dr. Bezerra, todos os botões que levam ao WhatsApp
+  (Agendar/Falar no WhatsApp/ícone WA/botão flutuante/Solicitar Consulta Online) estão
+  temporariamente desativados — visual acinzentado + pointer-events:none + tabindex="-1"
+  em cada um, href original preservado para reativar depois (basta remover essas 3 coisas
+  de cada <a>). A seção de Pagamento via Pix também foi comentada por inteiro (buscar por
+  "MÓDULO INATIVO: Pagamento via Pix" pra reativar). Ver seção 05-A da cartilha.
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -42,7 +50,7 @@
         <a href="#fotos" style="color:oklch(0.85 0.01 90);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:1px">FOTOS</a>
         <a href="#contato" style="color:oklch(0.85 0.01 90);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:1px">CONTATO</a>
       </div>
-      <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="text-decoration:none;padding:12px 26px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:12.5px;font-weight:700;letter-spacing:1px;white-space:nowrap">AGENDAR</a>
+      <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;padding:12px 26px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:12.5px;font-weight:700;letter-spacing:1px;white-space:nowrap">AGENDAR</a>
     </div>
   </div>
 
@@ -54,8 +62,8 @@
         <h1 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:54px;line-height:1.15;margin:0 0 22px;color:oklch(0.97 0.01 90)">Dr. <span style="font-style:italic;color:oklch(0.75 0.12 85)">Bezerra</span></h1>
         <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:21px;line-height:1.6;color:oklch(0.85 0.02 90);margin:0 0 36px;max-width:480px">"Cuidado clínico humanizado, no conforto e na segurança do seu lar."</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap">
-          <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700;letter-spacing:0.3px">Agendar Consulta</a>
-          <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;border:1.5px solid oklch(0.45 0.06 259);color:oklch(0.95 0.01 90);font-size:14px;font-weight:700">Falar no WhatsApp</a>
+          <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700;letter-spacing:0.3px">Agendar Consulta</a>
+          <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;border:1.5px solid oklch(0.45 0.06 259);color:oklch(0.95 0.01 90);font-size:14px;font-weight:700">Falar no WhatsApp</a>
         </div>
       </div>
       <div style="position:relative">
@@ -138,7 +146,7 @@
           <div style="width:44px;height:44px;border-radius:999px;background:linear-gradient(135deg, oklch(0.82 0.1 85), oklch(0.62 0.13 78));display:flex;align-items:center;justify-content:center;margin-bottom:18px"><div style="width:16px;height:16px;background:oklch(0.99 0.005 90);clip-path:polygon(40% 0,60% 0,60% 40%,100% 40%,100% 60%,60% 60%,60% 100%,40% 100%,40% 60%,0 60%,0 40%,40% 40%)"></div></div>
           <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:19px;margin:0 0 10px;color:oklch(0.24 0.04 260)">Consulta Online</h3>
           <p style="font-size:14px;line-height:1.65;color:oklch(0.48 0.02 260);margin:0 0 14px">Atendimento por videochamada para acompanhamento e casos que dispensam avaliação presencial, seguindo as normas de telemedicina do CFM.</p>
-          <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20Dr.%20Bezerra!%20Gostaria%20de%20agendar%20uma%20consulta%20online.%20Confirmo%20que%3A%20fui%20informado(a)%20de%20que%20o%20atendimento%20ser%C3%A1%20por%20telemedicina%20(videochamada)%2C%20conforme%20a%20Resolu%C3%A7%C3%A3o%20CFM%20n%C2%BA%202.314%2F2022%3B%20autorizo%20o%20uso%20da%20minha%20imagem%20e%20das%20minhas%20informa%C3%A7%C3%B5es%20de%20sa%C3%BAde%20durante%20a%20consulta%2C%20apenas%20entre%20mim%20e%20o%20m%C3%A9dico%3B%20entendo%20que%20a%20telemedicina%20tem%20limita%C3%A7%C3%B5es%20em%20rela%C3%A7%C3%A3o%20a%20um%20exame%20presencial%2C%20podendo%20ser%20indicada%20consulta%20domiciliar%20se%20necess%C3%A1rio%3B%20sei%20que%20meus%20dados%20ficar%C3%A3o%20registrados%20em%20prontu%C3%A1rio%20com%20sigilo%20garantido%3B%20e%20que%20posso%20recusar%20o%20atendimento%20remoto%20a%20qualquer%20momento%2C%20exceto%20em%20emerg%C3%AAncia.%20Li%20e%20concordo." target="_blank" rel="noopener" style="text-decoration:none;font-size:13px;font-weight:700;color:oklch(0.56 0.13 78)">Solicitar Consulta Online &#8594;</a>
+          <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20Dr.%20Bezerra!%20Gostaria%20de%20agendar%20uma%20consulta%20online.%20Confirmo%20que%3A%20fui%20informado(a)%20de%20que%20o%20atendimento%20ser%C3%A1%20por%20telemedicina%20(videochamada)%2C%20conforme%20a%20Resolu%C3%A7%C3%A3o%20CFM%20n%C2%BA%202.314%2F2022%3B%20autorizo%20o%20uso%20da%20minha%20imagem%20e%20das%20minhas%20informa%C3%A7%C3%B5es%20de%20sa%C3%BAde%20durante%20a%20consulta%2C%20apenas%20entre%20mim%20e%20o%20m%C3%A9dico%3B%20entendo%20que%20a%20telemedicina%20tem%20limita%C3%A7%C3%B5es%20em%20rela%C3%A7%C3%A3o%20a%20um%20exame%20presencial%2C%20podendo%20ser%20indicada%20consulta%20domiciliar%20se%20necess%C3%A1rio%3B%20sei%20que%20meus%20dados%20ficar%C3%A3o%20registrados%20em%20prontu%C3%A1rio%20com%20sigilo%20garantido%3B%20e%20que%20posso%20recusar%20o%20atendimento%20remoto%20a%20qualquer%20momento%2C%20exceto%20em%20emerg%C3%AAncia.%20Li%20e%20concordo." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;font-size:13px;font-weight:700;color:oklch(0.56 0.13 78)">Solicitar Consulta Online &#8594;</a>
         </div>
         <div style="background:oklch(0.97 0.012 85);border:1px solid oklch(0.9 0.015 85);border-radius:6px;padding:32px 28px">
           <div style="width:44px;height:44px;border-radius:999px;background:linear-gradient(135deg, oklch(0.82 0.1 85), oklch(0.62 0.13 78));display:flex;align-items:center;justify-content:center;margin-bottom:18px"><div style="width:16px;height:16px;background:oklch(0.99 0.005 90);clip-path:polygon(40% 0,60% 0,60% 40%,100% 40%,100% 60%,60% 60%,60% 100%,40% 100%,40% 60%,0 60%,0 40%,40% 40%)"></div></div>
@@ -224,10 +232,12 @@
           <div style="width:56px;height:56px;border-radius:999px;border:1.5px solid oklch(0.6 0.12 80);display:flex;align-items:center;justify-content:center;color:oklch(0.5 0.13 78);font-weight:700;font-size:13px">IG</div>
           <span style="font-size:12.5px;color:oklch(0.42 0.02 260);font-weight:600">Instagram</span>
         </a>
-        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px;width:96px">
+        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px;width:96px">
           <div style="width:56px;height:56px;border-radius:999px;border:1.5px solid oklch(0.6 0.12 80);display:flex;align-items:center;justify-content:center;color:oklch(0.5 0.13 78);font-weight:700;font-size:13px">WA</div>
           <span style="font-size:12.5px;color:oklch(0.42 0.02 260);font-weight:600">WhatsApp</span>
         </a>
+        <!-- MÓDULO INATIVO: ícones Facebook/YouTube ocultos (nunca tiveram link real, apontavam pra "#") -->
+        <!--
         <a href="#" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px;width:96px">
           <div style="width:56px;height:56px;border-radius:999px;border:1.5px solid oklch(0.6 0.12 80);display:flex;align-items:center;justify-content:center;color:oklch(0.5 0.13 78);font-weight:700;font-size:13px">FB</div>
           <span style="font-size:12.5px;color:oklch(0.42 0.02 260);font-weight:600">Facebook</span>
@@ -236,6 +246,7 @@
           <div style="width:56px;height:56px;border-radius:999px;border:1.5px solid oklch(0.6 0.12 80);display:flex;align-items:center;justify-content:center;color:oklch(0.5 0.13 78);font-weight:700;font-size:13px">YT</div>
           <span style="font-size:12.5px;color:oklch(0.42 0.02 260);font-weight:600">YouTube</span>
         </a>
+        -->
       </div>
     </div>
   </div>
@@ -246,8 +257,8 @@
       <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:36px;line-height:1.3;margin:16px 0 20px;color:oklch(0.97 0.01 90)">Cuidado clínico que vai até <span style="font-style:italic;color:oklch(0.75 0.12 85)">você</span></h2>
       <p style="font-size:15.5px;line-height:1.7;color:oklch(0.72 0.02 260);margin:0 0 36px">Agende sua consulta domiciliar hoje mesmo.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700">Agendar Consulta</a>
-        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;border:1.5px solid oklch(0.45 0.06 259);color:oklch(0.95 0.01 90);font-size:14px;font-weight:700">Falar no WhatsApp</a>
+        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700">Agendar Consulta</a>
+        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;border:1.5px solid oklch(0.45 0.06 259);color:oklch(0.95 0.01 90);font-size:14px;font-weight:700">Falar no WhatsApp</a>
       </div>
       <p style="font-size:12.5px;color:oklch(0.55 0.02 260);margin:32px 0 0;letter-spacing:0.3px">MÉDICO · CRM 6094-PB · Atendimento domiciliar em Campina Grande/PB</p>
     </div>
@@ -278,7 +289,7 @@
             </p>
           </div>
         </div>
-        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="margin-top:32px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700">Agendar Consulta Agora</a>
+        <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;margin-top:32px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700">Agendar Consulta Agora</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px">
         <div style="border:1px solid oklch(0.32 0.05 259);border-radius:6px;overflow:hidden;min-height:380px">
@@ -290,6 +301,8 @@
   </div>
 
 
+  <!-- MÓDULO INATIVO: Pagamento via Pix — desativado temporariamente a pedido do Dr. Bezerra (2026-09-21). Reative removendo este comentário. -->
+  <!--
   <div style="background:oklch(0.995 0.004 90);border-top:1px solid oklch(0.9 0.015 85)">
     <div style="max-width:1240px;margin:0 auto;padding:80px 32px;text-align:center">
       <span style="font-size:12px;letter-spacing:2px;font-weight:700;color:oklch(0.6 0.12 80)">PAGAMENTO</span>
@@ -308,6 +321,7 @@
       </div>
     </div>
   </div>
+  -->
 
   <div style="background:oklch(0.14 0.035 259);color:oklch(0.65 0.02 260)">
     <div style="max-width:1240px;margin:0 auto;padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
@@ -316,7 +330,7 @@
     </div>
   </div>
 
-  <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" style="position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:999px;background:linear-gradient(135deg, oklch(0.82 0.1 85), oklch(0.6 0.13 78));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:oklch(0.2 0.03 260);text-decoration:none;box-shadow:0 8px 24px oklch(0 0 0 / 0.35);z-index:60">WA</a>
+  <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:999px;background:linear-gradient(135deg, oklch(0.82 0.1 85), oklch(0.6 0.13 78));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:oklch(0.2 0.03 260);text-decoration:none;box-shadow:0 8px 24px oklch(0 0 0 / 0.35);z-index:60">WA</a>
 
 </div>
 </body>

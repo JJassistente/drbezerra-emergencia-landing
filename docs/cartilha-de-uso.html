@@ -179,6 +179,18 @@
     <a href="#cuidados"><span>07</span> Cuidados ao editar</a>
   </nav>
 
+  <div class="callout warn">
+    <strong>Estado atual (21/09/2026): botões de contato desativados temporariamente</strong>
+    A pedido do Dr. Bezerra, todos os botões que levam ao WhatsApp (Agendar, Falar no WhatsApp,
+    ícone WA, botão flutuante, Solicitar Consulta Online) estão visualmente acinzentados e sem
+    clique — e a seção "Pague sua consulta via Pix" foi ocultada inteira. Nada foi apagado: os
+    links originais continuam no código, só comentados/bloqueados. Para reativar, procure por
+    <code>pointer-events:none;filter:grayscale(1)</code> (remova esse trecho e os atributos
+    <code>tabindex="-1" aria-disabled="true"</code> de cada botão) e por
+    <code>MÓDULO INATIVO: Pagamento via Pix</code> (remova os comentários <code>&lt;!--</code> /
+    <code>--&gt;</code> ao redor da seção).
+  </div>
+
   <section id="estrutura">
     <h2><span class="num">01</span>Do que o site é feito</h2>
     <p>O site é uma <strong>página única</strong> (não tem "painel de administração" nem banco de dados). Tudo o que aparece nela mora em dois lugares dentro da pasta do projeto:</p>
