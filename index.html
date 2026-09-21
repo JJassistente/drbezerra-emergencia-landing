@@ -33,9 +33,13 @@
 <style>
   @keyframes fadeUp { from { opacity:0; transform:translateY(16px);} to {opacity:1; transform:translateY(0);} }
   * { box-sizing: border-box; }
-  body { margin:0; background:oklch(0.97 0.012 85); }
+  body { margin:0; background:oklch(0.97 0.012 85); overflow-x:hidden; }
   ::selection { background:oklch(0.75 0.12 85 / 0.4); }
   a { }
+  @media (max-width: 860px) {
+    .nav-links { display:none !important; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns:1fr !important; }
+  }
 </style>
 </head>
 <body>
@@ -44,7 +48,7 @@
   <div style="position:sticky;top:0;z-index:50;background:oklch(0.21 0.05 259);border-bottom:1px solid oklch(0.32 0.05 259)">
     <div style="max-width:1240px;margin:0 auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
       <span style="font-family:'Playfair Display',Georgia,serif;font-size:23px;letter-spacing:0.2px;color:oklch(0.96 0.01 90)">Dr. <span style="color:oklch(0.75 0.12 85)">Bezerra</span></span>
-      <div style="display:flex;align-items:center;gap:30px">
+      <div class="nav-links" style="display:flex;align-items:center;gap:30px">
         <a href="#sobre" style="color:oklch(0.85 0.01 90);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:1px">SOBRE</a>
         <a href="#servicos" style="color:oklch(0.85 0.01 90);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:1px">SERVIÇOS</a>
         <a href="#contato" style="color:oklch(0.85 0.01 90);text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:1px">CONTATO</a>
@@ -54,11 +58,11 @@
   </div>
 
   <div style="background:oklch(0.21 0.05 259)">
-    <div style="max-width:1240px;margin:0 auto;padding:88px 32px 96px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center">
+    <div class="grid-2" style="max-width:1240px;margin:0 auto;padding:88px 32px 96px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center">
       <div style="animation:fadeUp 0.7s ease both">
         <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border:1px solid oklch(0.45 0.06 259);border-radius:3px;font-size:11.5px;letter-spacing:1.5px;font-weight:700;color:oklch(0.75 0.12 85);margin-bottom:26px">● ATENDIMENTO DOMICILIAR</div>
         <p style="font-size:13px;letter-spacing:1.5px;color:oklch(0.68 0.02 260);margin:0 0 18px;font-weight:600">MÉDICO · CRM 6094-PB — ATENDIMENTO A IDOSOS E ADULTOS</p>
-        <h1 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:54px;line-height:1.15;margin:0 0 22px;color:oklch(0.97 0.01 90)">Dr. <span style="font-style:italic;color:oklch(0.75 0.12 85)">Bezerra</span></h1>
+        <h1 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(34px,9vw,54px);line-height:1.15;margin:0 0 22px;color:oklch(0.97 0.01 90)">Dr. <span style="font-style:italic;color:oklch(0.75 0.12 85)">Bezerra</span></h1>
         <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:21px;line-height:1.6;color:oklch(0.85 0.02 90);margin:0 0 36px;max-width:480px">"Cuidado clínico humanizado, no conforto e na segurança do seu lar."</p>
         <div style="display:flex;gap:16px;flex-wrap:wrap">
           <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700;letter-spacing:0.3px">Agendar Consulta</a>
@@ -81,8 +85,8 @@
         <span style="font-size:12px;letter-spacing:2px;font-weight:700;color:oklch(0.6 0.12 80)">POR QUE NOS ESCOLHER</span>
         <div style="width:40px;height:1px;background:oklch(0.6 0.12 80)"></div>
       </div>
-      <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:34px;margin:0 0 48px;color:oklch(0.22 0.04 260)">Nossos Diferenciais</h2>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+      <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(26px,6vw,34px);margin:0 0 48px;color:oklch(0.22 0.04 260)">Nossos Diferenciais</h2>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
         <div>
           <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:26px;color:oklch(0.6 0.12 80);margin-bottom:10px">Domiciliar</div>
           <p style="font-size:14.5px;line-height:1.6;color:oklch(0.42 0.02 260);margin:0">Consultas realizadas no conforto e na segurança da casa do paciente.</p>
@@ -109,8 +113,8 @@
         <span style="font-size:12px;letter-spacing:2px;font-weight:700;color:oklch(0.6 0.12 80)">SERVIÇOS</span>
         <div style="width:40px;height:1px;background:oklch(0.6 0.12 80)"></div>
       </div>
-      <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:34px;margin:0 0 48px;color:oklch(0.22 0.04 260)">Áreas de Atuação</h2>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(26px,6vw,34px);margin:0 0 48px;color:oklch(0.22 0.04 260)">Áreas de Atuação</h2>
+      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
         <div style="background:oklch(0.97 0.012 85);border:1px solid oklch(0.9 0.015 85);border-radius:6px;padding:32px 28px">
           <div style="width:44px;height:44px;border-radius:999px;background:linear-gradient(135deg, oklch(0.82 0.1 85), oklch(0.62 0.13 78));display:flex;align-items:center;justify-content:center;margin-bottom:18px"><div style="width:16px;height:16px;background:oklch(0.99 0.005 90);clip-path:polygon(40% 0,60% 0,60% 40%,100% 40%,100% 60%,60% 60%,60% 100%,40% 100%,40% 60%,0 60%,0 40%,40% 40%)"></div></div>
           <h3 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:19px;margin:0 0 10px;color:oklch(0.24 0.04 260)">Consulta Domiciliar</h3>
@@ -193,7 +197,7 @@
   -->
 
   <div id="sobre" style="background:oklch(0.995 0.004 90)">
-    <div style="max-width:1240px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center">
+    <div class="grid-2" style="max-width:1240px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center">
       <div style="border-radius:6px;overflow:hidden;aspect-ratio:4/5;border:1px solid oklch(0.9 0.015 85)">
         <img src="img/perfil.png" alt="Foto institucional" style="width:100%;height:100%;object-fit:cover;display:block">
       </div>
@@ -202,7 +206,7 @@
           <span style="font-size:12px;letter-spacing:2px;font-weight:700;color:oklch(0.6 0.12 80)">SOBRE MIM</span>
           <div style="width:40px;height:1px;background:oklch(0.6 0.12 80)"></div>
         </div>
-        <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:32px;margin:0 0 24px;color:oklch(0.22 0.04 260);line-height:1.3">Uma trajetória dedicada ao cuidado humano</h2>
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(24px,6vw,32px);margin:0 0 24px;color:oklch(0.22 0.04 260);line-height:1.3">Uma trajetória dedicada ao cuidado humano</h2>
         <p style="font-size:15.5px;line-height:1.85;color:oklch(0.42 0.02 260);margin:0 0 24px">Formado pela Universidade Federal de Campina Grande (UFCG), atuei por anos em urgência e emergência hospitalar — experiência que hoje aplico no atendimento domiciliar de idosos e adultos, levando cuidado de qualidade até onde o paciente está.</p>
         <div style="border-left:2px solid oklch(0.6 0.12 80);padding-left:22px;margin:0 0 24px">
           <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;line-height:1.7;color:oklch(0.3 0.03 260);margin:0">"Acredito em uma medicina próxima, que escuta e acompanha — construindo uma relação médico-paciente de verdadeira confiança."</p>
@@ -256,7 +260,7 @@
   <div style="background:linear-gradient(180deg, oklch(0.21 0.05 259), oklch(0.17 0.045 259))">
     <div style="max-width:900px;margin:0 auto;padding:96px 32px;text-align:center">
       <span style="font-size:12px;letter-spacing:2px;font-weight:700;color:oklch(0.75 0.12 85)">SUA SAÚDE EM BOAS MÃOS</span>
-      <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:36px;line-height:1.3;margin:16px 0 20px;color:oklch(0.97 0.01 90)">Cuidado clínico que vai até <span style="font-style:italic;color:oklch(0.75 0.12 85)">você</span></h2>
+      <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(26px,7vw,36px);line-height:1.3;margin:16px 0 20px;color:oklch(0.97 0.01 90)">Cuidado clínico que vai até <span style="font-style:italic;color:oklch(0.75 0.12 85)">você</span></h2>
       <p style="font-size:15.5px;line-height:1.7;color:oklch(0.72 0.02 260);margin:0 0 36px">Agende sua consulta domiciliar hoje mesmo.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
         <a href="https://wa.me/5583988072726?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20domiciliar%20com%20o%20Dr.%20Bezerra." target="_blank" rel="noopener" tabindex="-1" aria-disabled="true" style="pointer-events:none;filter:grayscale(1);opacity:0.45;cursor:not-allowed;text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;background:oklch(0.75 0.12 85);color:oklch(0.2 0.03 260);font-size:14px;font-weight:700">Agendar Consulta</a>
@@ -267,13 +271,13 @@
   </div>
 
   <div id="contato" style="background:oklch(0.21 0.05 259)">
-    <div style="max-width:1240px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px">
+    <div class="grid-2" style="max-width:1240px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
           <span style="font-size:12px;letter-spacing:2px;font-weight:700;color:oklch(0.75 0.12 85)">LOCALIZAÇÃO</span>
           <div style="width:40px;height:1px;background:oklch(0.75 0.12 85)"></div>
         </div>
-        <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:32px;margin:0 0 32px;color:oklch(0.97 0.01 90)">Agende sua Consulta</h2>
+        <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:clamp(24px,6vw,32px);margin:0 0 32px;color:oklch(0.97 0.01 90)">Agende sua Consulta</h2>
         <div style="display:flex;flex-direction:column;gap:22px">
           <div>
             <span style="font-size:11.5px;letter-spacing:1.5px;font-weight:700;color:oklch(0.75 0.12 85)">ENDEREÇO</span>
