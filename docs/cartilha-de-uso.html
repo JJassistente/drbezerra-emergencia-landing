@@ -188,7 +188,12 @@
     <code>pointer-events:none;filter:grayscale(1)</code> (remova esse trecho e os atributos
     <code>tabindex="-1" aria-disabled="true"</code> de cada botão) e por
     <code>MÓDULO INATIVO: Pagamento via Pix</code> (remova os comentários <code>&lt;!--</code> /
-    <code>--&gt;</code> ao redor da seção).
+    <code>--&gt;</code> ao redor da seção). Por conta desse estado "parado", foi adicionado um
+    selo flutuante no canto inferior esquerdo ("Página de demonstração — fale com a BSL Tech"),
+    o mesmo padrão visual usado em outros projetos da BSL Tech para sites de demonstração. Para
+    remover quando o site voltar a operar normalmente, procure por
+    <code>Página de demonstração — fale com a BSL Tech</code> e apague o bloco
+    <code>&lt;div&gt;</code> inteiro que o envolve (logo antes do botão flutuante do WhatsApp).
   </div>
 
   <section id="estrutura">
