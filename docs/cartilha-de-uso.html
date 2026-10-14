@@ -199,7 +199,15 @@
     operar normalmente, procure por <code>Página de demonstração</code> (apague o bloco
     <code>&lt;div&gt;</code> inteiro que envolve o selo, logo antes do botão flutuante do
     WhatsApp) e restaure o endereço/telefone/e-mail/CRM reais consultando um commit anterior a
-    essas máscaras.
+    essas máscaras.<br><br>
+    <strong>Cabeçalho (14/10/2026):</strong> ao lado do nome "Dr. Bezerra" há um QR Code
+    (<code>img/qrcode-bsltech.png</code>, 64 px) que abre o endereço da própria página
+    (<code>https://drbezerraemergencia.jjassistentebot.tech</code>) — não o WhatsApp. O nome no
+    cabeçalho usa o mesmo tamanho do título grande do banner (34 a 54 px conforme a tela) e a
+    margem vertical do cabeçalho foi reduzida de 20 px para 8 px (procure por
+    <code>padding:8px 32px</code>). Se o endereço do site mudar, gere o QR de novo rodando
+    <code>python scripts/gen_qrcode.py</code> (edite a variável <code>url</code> do script
+    antes; requer <code>pip install qrcode[pil]</code>) e republique.
   </div>
 
   <section id="estrutura">
@@ -209,7 +217,8 @@
       <table>
         <tr><th>Arquivo / pasta</th><th>O que é</th></tr>
         <tr><td class="mono">index.html</td><td>Todo o texto, os links (WhatsApp, Google Agenda, Instagram) e o layout da página.</td></tr>
-        <tr><td class="mono">img/</td><td>As 4 imagens usadas no site: foto de topo, foto de portfólio, foto da seção "Sobre Mim" e o QR Code do Pix.</td></tr>
+        <tr><td class="mono">img/</td><td>As 5 imagens usadas no site: foto de topo, foto de portfólio, foto da seção "Sobre Mim", o QR Code do Pix e o QR Code do cabeçalho (que abre o endereço do site).</td></tr>
+        <tr><td class="mono">scripts/gen_qrcode.py</td><td>Script que gera o QR Code do cabeçalho (<code>img/qrcode-bsltech.png</code>) a partir do endereço do site.</td></tr>
       </table>
     </div>
     <p class="muted">Não existe login nem senha para editar o site — qualquer alteração é feita diretamente nesses arquivos, e depois publicada (seção 5).</p>
@@ -226,6 +235,7 @@
         <tr><td class="mono">img/atendimento.png</td><td>Foto grande na seção "Atendimento e Estrutura" (galeria de fotos)</td><td>Quadrada (1:1) — foto do consultório, maleta ou de um atendimento</td></tr>
         <tr><td class="mono">img/perfil.png</td><td>Foto ao lado do texto "Sobre Mim"</td><td>Vertical (proporção 4:5) — foto de perfil mais próxima/pessoal</td></tr>
         <tr><td class="mono">img/pix-qr.png</td><td>QR Code na seção "Pague sua consulta via Pix"</td><td>Não é uma foto sua — é gerado a partir da chave Pix e do valor fixo (hoje R$ 350,00). Só precisa trocar se a chave ou o valor mudarem (peça para gerar um novo QR Code nesse caso).</td></tr>
+        <tr><td class="mono">img/qrcode-bsltech.png</td><td>QR Code no cabeçalho, ao lado do nome "Dr. Bezerra"</td><td>Não é uma foto — abre o endereço do site. Para gerar de novo, use <code>scripts/gen_qrcode.py</code>.</td></tr>
       </table>
     </div>
 
@@ -251,19 +261,19 @@
       <table>
         <tr><th>Onde</th><th>Texto atual (procure por isso)</th></tr>
         <tr><td>Frase de efeito, abaixo do título</td><td>"Cuidado clínico humanizado, no conforto e na segurança do seu lar."</td></tr>
-        <tr><td>Linha de identificação, acima do título</td><td>CRM: 6094-PB — ATENDIMENTO A IDOSOS E ADULTOS</td></tr>
+        <tr><td>Linha de identificação, acima do título</td><td>MÉDICO · CRM *09*-PB — ATENDIMENTO A IDOSOS E ADULTOS (mascarado no estado de demonstração; o real é 6094-PB)</td></tr>
         <tr><td>Parágrafo "Sobre Mim" (trajetória)</td><td>Formado pela Universidade Federal de Campina Grande (UFCG)...</td></tr>
         <tr><td>Citação em destaque na seção Sobre Mim</td><td>"Acredito em uma medicina próxima, que escuta e acompanha..."</td></tr>
         <tr><td>4 diferenciais (Domiciliar, Humanizado, Idosos & Adultos, Confiança)</td><td>Cada card tem um título curto em itálico e uma frase logo abaixo</td></tr>
         <tr><td>9 cards de "Áreas de Atuação"</td><td>Consulta Domiciliar, Cuidado ao Idoso, Clínica para Adultos, Acompanhamento Contínuo, Avaliação Preventiva, Orientação a Familiares, Consulta Online, Atestados Médicos, Renovação de Receitas</td></tr>
         <tr><td>Botão "Solicitar Consulta Online"</td><td>No card "Consulta Online" — abre o WhatsApp com uma mensagem de consentimento já preenchida (ver seção 05)</td></tr>
-        <tr><td>Endereço</td><td>Rua Raimundo Nonato Araújo, Sala 1010 — Bairro Catolé</td></tr>
-        <tr><td>Telefone / WhatsApp</td><td>(83) 98807-2726 — aparece em vários lugares (botões de WhatsApp, telefone, rodapé)</td></tr>
+        <tr><td>Endereço</td><td>Hoje mascarado na página (<code>Rua xxxxxxxx xxxxxx xxxxxxx, Sala xxxx…</code>) e o mapa mostra só a cidade. Valor real: Rua Raimundo Nonato Araújo, Sala 1010 — Bairro Catolé</td></tr>
+        <tr><td>Telefone / WhatsApp</td><td>Texto de contato mascarado como <code>(xx) xxxxx-*72*</code>. Valor real: (83) 98807-2726 — que continua nos links dos botões de WhatsApp (desativados)</td></tr>
         <tr><td>Instagram</td><td>@dr_bezerra_emergencia</td></tr>
-        <tr><td>E-mail</td><td>medic.assistent@gmail.com</td></tr>
+        <tr><td>E-mail</td><td>Mascarado como <code>xxxxx.xxxxxxxxx@gmail.com</code>. Valor real: medic.assistent@gmail.com</td></tr>
         <tr><td>Chave Pix (aleatória)</td><td>aede5888-f6b6-44b4-ab7e-b778ab517aa9</td></tr>
         <tr><td>Valor fixo do Pix</td><td>R$ 350,00 — já vem preenchido no QR Code, o paciente só confirma no app do banco</td></tr>
-        <tr><td>Rodapé (direitos autorais)</td><td>© 2026 Dr. Bezerra, médico — CRM 6094-PB.</td></tr>
+        <tr><td>Rodapé (direitos autorais)</td><td>© 2026 Dr. Bezerra, médico — CRM *09*-PB. (mascarado; real: 6094-PB)</td></tr>
       </table>
     </div>
 
