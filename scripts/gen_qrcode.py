@@ -1,10 +1,6 @@
 import qrcode
-from urllib.parse import quote
 
-phone = "5583988976590"
-text = ("Ola! Vi a pagina de demonstracao da BSLTECH "
-        "(https://drbezerraemergencia.jjassistentebot.tech) e gostaria de saber mais.")
-url = f"https://wa.me/{phone}?text={quote(text)}"
+url = "https://drbezerraemergencia.jjassistentebot.tech"
 print("QR target:", url)
 
 qr = qrcode.QRCode(
